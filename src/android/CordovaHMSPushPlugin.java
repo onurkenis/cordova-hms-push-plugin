@@ -9,14 +9,13 @@ import com.huawei.hms.aaid.HmsInstanceId;
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
-import org.json.JSONException;
 
 import static com.huawei.cordovahmspushplugin.Constants.TAG;
 
 /**
  * This class implements main native functions of push
  * and extends CordovaPlugin class to serve functionality
- * to JS layer. 
+ * to JS layer.
  */
 public class CordovaHMSPushPlugin extends CordovaPlugin {
 
@@ -43,9 +42,9 @@ public class CordovaHMSPushPlugin extends CordovaPlugin {
     }
 
     /**
-     * Gets the client token from.
+     * Gets the client token from
      * HMS Push Kit.
-     * 
+     *
      * @param callbackContext The callback context used when calling back into JavaScript.
      */
     private void getToken(CallbackContext callbackContext) {
@@ -62,6 +61,19 @@ public class CordovaHMSPushPlugin extends CordovaPlugin {
             Log.e(TAG, "getToken Failed, " + e);
             callbackContext.error("getToken Failed, error : " + e.getMessage());
         }
+    }
+
+    /**
+     * Gets notification data from intent
+     * and returns data with callbackContext.
+     *
+     * @param callbackContext The callback context used when calling back into JavaScript.
+     */
+    private void getNotificationData(CallbackContext callbackContext) {
+        Log.i(TAG, "getNotificationData: begin");
+        Log.i(TAG, notificationData);
+
+        callbackContext.success(notificationData);
     }
 
 }
