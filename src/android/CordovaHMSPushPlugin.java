@@ -16,6 +16,8 @@ import static com.huawei.cordovahmspushplugin.Constants.TAG;
  * This class implements main native functions of push
  * and extends CordovaPlugin class to serve functionality
  * to JS layer.
+ *
+ * @author Onur Kenis
  */
 public class CordovaHMSPushPlugin extends CordovaPlugin {
 
