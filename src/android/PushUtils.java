@@ -18,10 +18,10 @@ public class PushUtils {
     public static void setIntentData(Bundle extras) {
         IntentData intentData = new IntentData(extras);
 
-        CordovaHMSPushPlugin.notificationData = "{"
-                + "    \"isNotification\":" + intentData.isOnNotificationOpened() + ","
-                + "    \"title\": \"" + intentData.getTitle() + "\","
-                + "    \"body\": \"" + intentData.getBody() + "\","
+        String data = "{"
+                + "\"isNotification\":" + intentData.isNotification() + ","
+                + "\"title\": \"" + intentData.getTitle() + "\","
+                + "\"body\": \"" + intentData.getBody() + "\""
                 + "}";
 
     }

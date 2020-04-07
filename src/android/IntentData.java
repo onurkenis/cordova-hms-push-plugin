@@ -9,26 +9,28 @@ import android.os.Bundle;
  */
 class IntentData {
 
-    private boolean onNotificationOpened;
+    private boolean isNotification;
     private String title;
     private String body;
 
     IntentData(Bundle extras) {
 
-        if (extras != null && extras.getBoolean("onNotificationOpened", false)) {
-            this.onNotificationOpened = true;
+        if (extras != null) {
+            this.isNotification = Boolean
+                .parseBoolean(extras.getString("isNotification", "false"));
+
             this.title = extras.getString(Constants.TITLE);
             this.body = extras.getString(Constants.BODY);
         }
 
     }
 
-    boolean isOnNotificationOpened() {
-        return onNotificationOpened;
+    boolean isNotification() {
+        return isNotification;
     }
 
-    void setOnNotificationOpened(boolean onNotificationOpened) {
-        this.onNotificationOpened = onNotificationOpened;
+    void setNotification(boolean notification) {
+        this.isNotification = notification;
     }
 
     String getTitle() {
