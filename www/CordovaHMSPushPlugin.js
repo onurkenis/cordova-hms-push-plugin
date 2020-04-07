@@ -5,21 +5,24 @@ exports.getToken = function (arg0, success, error) {
 }
 
 function getIntentData() {
-	exec(null, null, "CordovaHMSPushPlugin", "getIntentData", []);
+	exec(setPushEventDispatcher, getIntentDataFail, "CordovaHMSPushPlugin", "getIntentData", []);
 }
 
-function setPushEventDispatcher() {
-	const intentData = getIntentData();
-    console.log("intentData", intentData);
-    
+function setPushEventDispatcher(intentData) {
 	const json = JSON.parse(intentData);
-		
+	console.log("intentData ", intentData);
+	
 	if(json.isNotification) {
 		// Dispatch the event.
-		elem.dispatchEvent(new CustomEvent('onNotificationOpened', json));
+		console.log("onNotificationOpened ", "dispatched");
+		document.dispatchEvent(new CustomEvent('onNotificationOpened', null));
 	}
 }
 
-document.addEventListener("resume", setPushEventDispatcher, false);
+function getIntentDataFail() {
+	console.log("getIntentData failed");
+}
 
-document.addEventListener("deviceready", setPushEventDispatcher, false);
+document.addEventListener("resume", getIntentData, false);
+
+document.addEventListener("deviceready", getIntentData, false);
