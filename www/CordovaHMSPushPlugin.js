@@ -1,7 +1,7 @@
 var exec = require('cordova/exec');
 
 exports.getToken = function (arg0, success, error) {
-    exec(success, error, "CordovaHMSPushPlugin", "getToken", [arg0]);
+	exec(success, error, "CordovaHMSPushPlugin", "getToken", [arg0]);
 }
 
 function getIntentData() {
@@ -9,13 +9,13 @@ function getIntentData() {
 }
 
 function setPushEventDispatcher(intentData) {
+	console.log("intentData: ", intentData)
 	const json = JSON.parse(intentData);
-	console.log("intentData ", intentData);
-	
-	if(json.isNotification) {
+
+	if (json.isNotification) {
 		// Dispatch the event.
-		console.log("onNotificationOpened ", "dispatched");
-		document.dispatchEvent(new CustomEvent('onNotificationOpened', null));
+		console.log("onNotificationOpened: ", "dispatched");
+		document.dispatchEvent(new CustomEvent('onNotificationOpened', { detail: json }));
 	}
 }
 

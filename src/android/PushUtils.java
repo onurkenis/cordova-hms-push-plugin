@@ -1,9 +1,10 @@
 package com.huawei.cordovahmspushplugin;
 
 import android.os.Bundle;
+import android.util.Log;
 
 /**
- * This class is a push related utility class. 
+ * This class is a push related utility class.
  *
  * @author Onur Kenis
  */
@@ -18,11 +19,12 @@ public class PushUtils {
     public static void setIntentData(Bundle extras) {
         IntentData intentData = new IntentData(extras);
 
-        String data = "{"
-                + "\"isNotification\":" + intentData.isNotification() + ","
-                + "\"title\": \"" + intentData.getTitle() + "\","
+        CordovaHMSPushPlugin.notificationData = "{"
+                + "\"isNotification\":" + intentData.isNotification() + ", "
+                + "\"title\": \"" + intentData.getTitle() + "\", "
                 + "\"body\": \"" + intentData.getBody() + "\""
                 + "}";
+
 
     }
 }

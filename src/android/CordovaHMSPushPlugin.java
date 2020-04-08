@@ -38,6 +38,9 @@ public class CordovaHMSPushPlugin extends CordovaPlugin {
             case "getToken":
                 this.getToken(callbackContext);
                 return true;
+            case "getIntentData":
+                this.getNotificationData(callbackContext);
+                return true;
             default:
                 return false;
         }
