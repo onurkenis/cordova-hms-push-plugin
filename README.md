@@ -27,7 +27,7 @@ PushUtils.setIntentData(bundle);
 ```javascript
 document.addEventListener('onNotificationOpened', function (notification) {
     console.log("onNotificationOpened Title: " + notification.detail.title);
-	console.log("onNotificationOpened Body: " + notification.detail.body);
+    console.log("onNotificationOpened Body: " + notification.detail.body);
 }, false);
 ```
 
