@@ -9,4 +9,5 @@ class Constants {
     static String TITLE = "title";
     static String BODY = "body";
     static final String TAG = "CordovaHMSPushPlugin";
+	static final String DEFAULT_INTENT_DATA = "{\"isNotification\": false}";
 }

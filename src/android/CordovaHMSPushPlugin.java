@@ -10,6 +10,7 @@ import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaPlugin;
 import org.json.JSONArray;
 
+import static com.huawei.cordovahmspushplugin.Constants.DEFAULT_INTENT_DATA;
 import static com.huawei.cordovahmspushplugin.Constants.TAG;
 
 /**
@@ -22,7 +23,7 @@ import static com.huawei.cordovahmspushplugin.Constants.TAG;
 public class CordovaHMSPushPlugin extends CordovaPlugin {
 
     // Notification data as JSON string
-    static String notificationData;
+    static String notificationData = DEFAULT_INTENT_DATA;
 
     /**
      * Executes the request.
