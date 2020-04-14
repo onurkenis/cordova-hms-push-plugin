@@ -22,7 +22,8 @@ public class PushUtils {
         CordovaHMSPushPlugin.notificationData = "{"
                 + "\"isNotification\":" + intentData.isNotification() + ", "
                 + "\"title\": \"" + intentData.getTitle() + "\", "
-                + "\"body\": \"" + intentData.getBody() + "\""
+                + "\"body\": \"" + intentData.getBody() + "\", "
+                + "\"image\": \"" + intentData.getImage() + "\""
                 + "}";
 
 
